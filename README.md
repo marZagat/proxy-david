@@ -1,4 +1,9 @@
-# WeGot - Proxy Server
+# marZagat - Proxy Server
+
+## Credits
+This repository is based on a pre-existing front-end capstone project proxy server. Credit due to Stacy: 
+Source Repository: https://github.com/bamboo-connection/proxy-server-stacy 
+Owner: https://github.com/stayclin
 
 > Welcome to the WeGot food review website. This web application consists of four services - photo gallery, overview, map and side bar, and recommendations.
 
