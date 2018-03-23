@@ -9,7 +9,7 @@ app.use(morgan('dev'));
 // app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-  res.redirect('/restaurants/ChIJUcXYWWGAhYARmjMY2bJAG2s/');
+  res.redirect('/restaurants/25/');
 });
 
 app.use('/restaurants/:id', express.static(path.join(__dirname, 'public')));
@@ -20,8 +20,8 @@ app.get('/api/restaurants/:id/gallery', (req, res) => {
 app.get('/api/restaurants/:id/overview', (req, res) => {
   res.redirect(`http://184.169.248.150/api/restaurants/${req.params.id}/overview`)
 });
-app.get('/api/restaurants/:id/sidebar', (req, res) => {
-  res.redirect(`http://54.177.233.239/api/restaurants/${req.params.id}/sidebar`)
+app.get('/api/restaurants/:id/businessinfo', (req, res) => {
+  res.redirect(`http://localhost:3003/api/restaurants/${req.params.id}/businessinfo`)
 });
 app.get('/api/restaurants/:id/recommendations', (req, res) => {
   res.redirect(`http://52.89.102.101/api/restaurants/${req.params.id}/recommendations`)
