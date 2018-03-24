@@ -19,7 +19,7 @@ const fetchBundles = (path, services, suffix = '', require = false) => {
         require ? loadBundle(services, item, filename) : null;
       })
       .catch(err => {
-        if (err.code === 'ENOEN') {
+        if (err.code === 'ENOENT') {
           const url = `${services[item]}${suffix}.js`;
           console.log(`Fetching: ${url}`);
           fetch(url)

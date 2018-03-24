@@ -27,7 +27,7 @@ const renderComponents = (components, props = {}) => {
 }
 
 app.get('/restaurants/:id', function(req, res) {
-  let components = renderComponents(services, {itemid: req.params.id});
+  let components = renderComponents(services, {id: req.params.id});
   res.end(Layout(
     'marZagat',
     App(...components),

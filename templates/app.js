@@ -1,3 +1,3 @@
 module.exports = (businessinfo) => `
-  <div id="business-info">${businessinfo}</div>
+  <div id="BusinessInfo">${businessinfo}</div>
 `;
