@@ -1,5 +1,5 @@
 const fs = require('fs');
-const fetch = require('note-fetch');
+const fetch = require('node-fetch');
 const Promise = require('bluebird');
 const exists = Promise.promisify(fs.stat);
 
