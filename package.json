@@ -1,5 +1,5 @@
 {
-  "name": "proxy-server-stacy",
+  "name": "proxy-david",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/bamboo-connection/proxy-server-stacy.git"
   },
-  "author": "Stacy Lin",
+  "author": "David Seidenberg, Credit for base code to Stacy Lin",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/bamboo-connection/proxy-server-stacy/issues"
