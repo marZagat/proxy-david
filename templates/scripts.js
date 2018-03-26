@@ -4,14 +4,14 @@ module.exports = (items, id) => `
   ${items.map(item => {
     return `<script src="/services/${item}.js"></script>`;
   }).join('\n')}
-  <script>
-  ${items.map(item => {
-    return `ReactDOM.hydrate(
-      React.createElement(${item}, {restaurantId: '${id}'}, null),
-      document.getElementById('${item}')
-    );`;
-  }).join('\n')}
-  </script>
 `;
 
 
+// <script>
+// ${items.map(item => {
+//   return `ReactDOM.hydrate(
+//     React.createElement(${item}, {restaurantId: '${id}'}, null),
+//     document.getElementById('${item}')
+//   );`;
+// }).join('\n')}
+// </script>
