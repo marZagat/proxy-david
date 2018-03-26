@@ -7,7 +7,8 @@
     "server": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon -i ./public/services -i ./templates/services ./server.js",
-    "oldStart": "node server.js"
+    "oldStart": "node server.js",
+    "unpack": "rm public/services/BusinessInfo.js && rm templates/services/BusinessInfo-server.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,8 @@
   },
   "homepage": "https://github.com/bamboo-connection/proxy-server-stacy#readme",
   "dependencies": {
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
     "bluebird": "^3.5.1",
     "express": "^4.16.2",
     "morgan": "^1.9.0",

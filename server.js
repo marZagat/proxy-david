@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000;
 
 app.use(morgan('dev'));
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public/')));
 
 const clientBundles = './public/services';
 const serverBundles = './templates/services';
@@ -26,8 +26,14 @@ const renderComponents = (components, props = {}) => {
   })
 }
 
-app.get('/restaurants/:id', function(req, res) {
+app.get('/restaurants/:id', async (req, res) => {
+
   let components = renderComponents(services, {restaurantId: req.params.id});
+  // console.log(Layout(
+  //   'marZagat',
+  //   App(...components),
+  //   Scripts(Object.keys(services), req.params.id)
+  // ));
   res.end(Layout(
     'marZagat',
     App(...components),

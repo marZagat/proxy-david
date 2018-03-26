@@ -8,7 +8,7 @@ const loadBundle = function(cache, item, filename) {
   setTimeout(() => {
     console.log('loading:', filename);
     cache[item] = require(filename).default;
-  }, 100);
+  }, 1000);
 };
 
 const fetchBundles = (path, services, suffix = '', require = false) => {
@@ -31,7 +31,7 @@ const fetchBundles = (path, services, suffix = '', require = false) => {
               });
             });
         } else {
-          console.log('WARNING: Unkown fs error');
+          console.log('WARNING: Unknown fs error');
         }
       });
   });
