@@ -7,7 +7,6 @@ const port = process.env.PORT || 3000;
 const request = require('request');
 
 app.use(morgan('dev'));
-// app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
   res.redirect('/restaurants/25/');
