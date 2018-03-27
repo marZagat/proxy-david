@@ -8,6 +8,7 @@ app.use(morgan('dev'));
 
 app.use(express.static(path.join(__dirname, 'public/')));
 
+import { ServerStyleSheet } from 'styled-components'; // <-- importing ServerStyleSheet
 const clientBundles = './public/services';
 const serverBundles = './templates/services';
 const serviceConfig = require('./service-config.json');
@@ -28,6 +29,7 @@ const renderComponents = (components, props = {}) => {
 
 app.get('/restaurants/:id', async (req, res) => {
 
+  const sheet = new ServerStyleSheet(); // <-- creating out stylesheet
   let components = renderComponents(services, {id: req.params.id});
   console.log(Layout(
     'marZagat',
