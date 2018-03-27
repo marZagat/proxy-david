@@ -1,4 +1,4 @@
-module.exports = (title, body, scripts) => `
+module.exports = (title, styles, body, scripts) => `
   <!DOCTYPE html>
   <html lang="en">
     <head>
