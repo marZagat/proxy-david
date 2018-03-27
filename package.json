@@ -4,11 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "server": "nodemon server.js",
+    "server": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon -i ./public/services -i ./templates/services ./server.js",
-    "oldStart": "node server.js",
-    "unpack": "rm public/services/BusinessInfo.js && rm templates/services/BusinessInfo-server.js"
+    "start": "node -i ./public/services -i ./templates/services ./server.js",
+    "unpack": "rm public/services/BusinessInfo.js && rm templates/services/BusinessInfo-server.js",
+    "artillery": "artillery run ./loadTests/proxyTest.yml"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,6 @@
     "morgan": "^1.9.0",
     "node-fetch": "^2.1.1",
     "request": "^2.83.0",
-    "styled-components": "^3.2.3",
     "webpack": "^4.2.0"
   },
   "devDependencies": {
