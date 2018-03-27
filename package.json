@@ -6,7 +6,7 @@
   "scripts": {
     "server": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node -i ./public/services -i ./templates/services ./server.js",
+    "start": "nodemon -i ./public/services -i ./templates/services ./server.js",
     "unpack": "rm public/services/BusinessInfo.js && rm templates/services/BusinessInfo-server.js",
     "artillery": "artillery run ./loadTests/proxyTest.yml"
   },
