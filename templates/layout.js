@@ -3,8 +3,8 @@ module.exports = (title, body, scripts) => `
   <html lang="en">
     <head>
       <meta charset="UTF-8">
-      <link rel="stylesheet" type="text/css" href="style.css">
-      <link rel="stylesheet" type="text/css" href="businessinfostyles.css">
+      <link rel="stylesheet" type="text/html" href="style.css">
+      <link rel="stylesheet" type="text/html" href="businessinfostyles.css">
       <title>${title}</title>
     </head>
     <body>

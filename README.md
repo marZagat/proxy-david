@@ -5,7 +5,7 @@ This repository is based on a pre-existing front-end capstone project proxy serv
 Source Repository: https://github.com/bamboo-connection/proxy-server-stacy 
 Owner: https://github.com/stayclin
 
-> Welcome to the WeGot food review website. This web application consists of four services - photo gallery, overview, map and side bar, and recommendations.
+> Welcome to the marZagat food review website. This web application consists of four services - photo gallery, overview, business info, and recommendations.
 
 ## Related Projects
 
@@ -45,8 +45,15 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 From within the root directory:
 
-```sh
+```
 npm install -g webpack
 npm install
 ```
+### Manual Setup 
+1. Install dependencies: `npm install`
+2. Set up and start all microservices (see microservice READMEs)
+3. Start server: `npm start`
 
+### Docker Setup
+1. Spin up containers: `docker-compose up`
+2. Seed database: `docker exec -it <businessinfo container name> npm run seed`
