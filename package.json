@@ -1,29 +1,42 @@
 {
-  "name": "proxy-server-stacy",
+  "name": "proxy-david",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "server": "nodemon server.js",
+    "server": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon -i ./public/services -i ./templates/services ./server.js",
+    "unpack": "rm public/services/BusinessInfo.js && rm templates/services/BusinessInfo-server.js",
+    "artillery": "artillery run ./loadTests/proxyTest.yml"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bamboo-connection/proxy-server-stacy.git"
   },
-  "author": "Stacy Lin",
+  "author": "David Seidenberg, Credit for base code to Stacy Lin",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/bamboo-connection/proxy-server-stacy/issues"
   },
   "homepage": "https://github.com/bamboo-connection/proxy-server-stacy#readme",
   "dependencies": {
+    "axios": "^0.18.0",
+    "bluebird": "^3.5.1",
     "express": "^4.16.2",
     "morgan": "^1.9.0",
-    "request": "^2.83.0"
+    "node-fetch": "^2.1.1",
+    "request": "^2.83.0",
+    "webpack": "^4.2.0"
   },
   "devDependencies": {
-    "newrelic": "^3.2.0"
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "newrelic": "^3.2.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   }
 }

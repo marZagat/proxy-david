@@ -1,0 +1,24 @@
+config:
+  target: "http://127.0.0.1:3003"
+  http:
+    timeout: 2
+    pool: 10
+  phases: 
+    - duration: 20
+      arrivalRate: 20
+  processor: "./loadTestHelpers.js"
+scenarios:
+  - flow:
+    - loop:
+      - get:
+          url: "/api/restaurants/{{ id }}/businessinfo"
+          beforeRequest: "getRandomNormalId"
+      count: 100
+    weight: 1
+  - flow:
+    - loop:
+      - get:
+          url: "/api/restaurants/{{ id }}/businessinfo"
+          beforeRequest: "getRandomPopularId"
+      count: 100
+    weight: 4
