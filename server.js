@@ -6,7 +6,7 @@ const ReactDom = require('react-dom/server');
 
 const clientBundles = './public/services';
 const serverBundles = './templates/services';
-const serviceConfig = require('./service-config.json');
+const serviceConfig = require('./service-config.js');
 const services = require('./loader.js')(clientBundles, serverBundles, serviceConfig);
 const Layout = require('./templates/layout');
 const App = require('./templates/app');
