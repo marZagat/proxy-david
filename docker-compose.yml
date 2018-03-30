@@ -1,26 +1,26 @@
 version: '3'
 
 services:
-  businessinfo: 
-    build: ../businessinfo
-    image: business_info
-    depends_on: 
+  businessinfo:
+    image: davidseid/business_info_deploy:deploy
+    depends_on:
       - 'mongo'
       - 'redis'
     environment:
       - REDIS_HOST=redis
       - DATABASE_HOST=mongo
+      - HOST=localhost
     ports:
       - '3003:3003'
   proxy:
-    build: .
-    image: dsproxy
+    image: davidseid/dsproxy_deploy:deploy
     depends_on:
       - 'mongo'
       - 'redis'
       - 'businessinfo'
     environment:
       - BUSINESS_INFO_ADDRESS=businessinfo
+      - HOST=localhost
     ports:
       - '3000:3000'
   mongo:

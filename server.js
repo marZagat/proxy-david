@@ -1,8 +1,10 @@
 const express = require('express');
-const morgan = require('morgan');
+// const morgan = require('morgan');
 const path = require('path');
 const React = require('react');
 const ReactDom = require('react-dom/server');
+const host = process.env.HOST || 'localhost';
+const cors = require('cors');
 
 const clientBundles = './public/services';
 const serverBundles = './templates/services';
@@ -15,7 +17,8 @@ const Scripts = require('./templates/scripts');
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
+app.use(cors());
 
 app.use(express.static(path.join(__dirname, 'public/')));
 
@@ -36,5 +39,5 @@ app.get('/restaurants/:id', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`server running at: http://localhost:${port}`)
+  console.log(`server running at: http://${host}:${port}`);
 });
