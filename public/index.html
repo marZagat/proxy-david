@@ -15,6 +15,7 @@
     <script src="/lib/react-dom.development.js"></script>
     <script src="http://ec2-52-53-104-137.us-west-1.compute.amazonaws.com:3003/app.js"></script> 
     <script>
+      console.log(`This log is from the public index.html on the proxy, should not be running`);
       ReactDOM.render(
         React.createElement(BusinessInfo, {restaurantId: listing}),
         document.getElementById('BusinessInfo')

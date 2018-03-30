@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const React = require('react');
 const ReactDom = require('react-dom/server');
-const host = process.env.HOST || 'localhost';
+const proxyHost = process.env.PROXY_HOST || 'localhost';
 const cors = require('cors');
 
 const clientBundles = './public/services';
@@ -39,5 +39,5 @@ app.get('/restaurants/:id', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`server running at: http://${host}:${port}`);
+  console.log(`Proxy host server running at: http://${proxyHost}:${port}`);
 });
