@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  businessinfo: 
+    build: ../businessinfo
+    image: business_info
+    depends_on: 
+      - 'mongo'
+      - 'redis'
+    environment:
+      - REDIS_HOST=redis
+      - DATABASE_HOST=mongo
+    ports:
+      - '3003:3003'
+  proxy:
+    build: .
+    image: dsproxy
+    depends_on:
+      - 'mongo'
+      - 'redis'
+      - 'businessinfo'
+    environment:
+      - BUSINESS_INFO_ADDRESS=businessinfo
+    ports:
+      - '3000:3000'
+  mongo:
+    image: mongo:latest
+    volumes:
+      - business_info_db:/var/lib/docker
+  redis:
+    image: redis:3.2-alpine
+
+volumes:
+  business_info_db:
